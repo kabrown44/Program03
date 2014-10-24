@@ -18,10 +18,24 @@ class RadixSort
 template < class T >
 T** RadixSort<T>::radixSort(T** unsorted, int num_to_sort, int num_chars, bool asc, char (*getRadixChar) (T* item, int index))
 {
-   //DO THIS
+   T** array = T*[num_to_sort];
 
+   for(int i = 0; i < num_to_sort; i++)
+   {
+      array[i] = unsorted[i];
+   }
 
+   if(asc)
+   {
+      radixSortAsc(array, num_to_sort, num_chars, getRadixChar);
+   }
 
+   else
+   {
+      radixSortDesc(array, num_to_sort, num_chars, getRadixChar);
+   }
+
+   return array;
 }
 
 template < class T >
