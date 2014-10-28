@@ -48,20 +48,19 @@ void RadixSort<T>::radixSortAsc(T** sort, int n, int num_chars, char (*getRadixC
 
 
 
-
 }
 
 template < class T >
 void RadixSort<T>::binSort(QueueLinked<T>* bin, int curr_char, int num_chars, char (*getRadixChar) (T* st, int index))
 {
    //DO THIS
+   int num_queues = 37;
+   QueueLinked<T>** bins = new QueueLinked<T>*[num_queues];
 
-
-
-
-
-
-
+   for(int i = 0; i < num_queues; i++ )
+   {
+      bins[i] = new QueueLinked<T>();
+   }
 
 
 
@@ -77,6 +76,7 @@ void RadixSort<T>::radixSortDesc(T** sort, int n, int num_chars, char (*getRadix
    for (int i = 0; i < num_queues; i++)
    {
       //DO THIS
+      bins[i] = new QueueLinked<T>();
    }
 
    for (int i = num_chars; i > 0; i--)  //number of times to bin stuff
